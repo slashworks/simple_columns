@@ -41,3 +41,15 @@ $GLOBALS['TL_LANG']['tl_content']['simple_columns_close'] = array('Zeile manuell
 $GLOBALS['TL_LANG']['tl_content']['simple_columns_wrapper'] = array('Umschlag-Element hinzufügen', 'Um das Element wird ein DIV hinzugefügt. Wird bei Modulen benötigt.');
 $GLOBALS['TL_LANG']['tl_content']['simple_columns_autoheight'] = array('Gleiche Spaltenhöhe', 'Das Element wird so hoch wie das höchste Element in der Zeile.');
 $GLOBALS['TL_LANG']['tl_content']['simple_columns_border'] = array('Rechten Rand zeichnen', 'Das Element erhält rechts einen Rand (CSS Klasse sc-border). Nur bei Box Sizing Model border-box möglich.');
+
+
+$GLOBALS['TL_LANG']['simple_columns']['firstElement'] = 'u_first u';
+$GLOBALS['TL_LANG']['simple_columns']['lastElement'] = 'u_last u';
+$GLOBALS['TL_LANG']['simple_columns']['first-suffix'] = '_first';
+$GLOBALS['TL_LANG']['simple_columns']['last-suffix'] = '_last';
+
+$GLOBALS['TL_LANG']['simple_columns']['rawspan'] = 'u_rawspan';
+$GLOBALS['TL_LANG']['simple_columns']['close'] = 'u_close';
+$GLOBALS['TL_LANG']['simple_columns']['base'] = 'u_';
+$GLOBALS['TL_LANG']['simple_columns']['count'] = 'u_count_';
+$GLOBALS['TL_LANG']['simple_columns']['border'] = 'u_border';

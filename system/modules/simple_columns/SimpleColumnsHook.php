@@ -83,7 +83,7 @@ class SimpleColumnsHook extends Frontend
 
 				$be_html = '<div>';
 
-				$scClass = 'sc sc' . $objElement->simple_columns . ' sc-count'.$GLOBALS['SIMPLECOLUMNS']['count']++ . ($objElement->simple_columns_border?' sc-border':'');
+				$scClass =  $GLOBALS['TL_LANG']['simple_columns']['base'] . $this->columnmapper($objElement->simple_columns) . ' ' . $GLOBALS['TL_LANG']['simple_columns']['count'] .$GLOBALS['SIMPLECOLUMNS']['count']++ . ($objElement->simple_columns_border?' '.$GLOBALS['TL_LANG']['simple_columns']['border']:'');
 
 				if ($objElement->simple_columns_autoheight)
 				{
@@ -141,7 +141,7 @@ class SimpleColumnsHook extends Frontend
 				{
 					if ($simpleColumnCounter[$columns] == 0)
 					{
-						$scClass .= ' sc-first sc' . $objElement->simple_columns . '-first';
+						$scClass .= ' '.$GLOBALS['TL_LANG']['simple_columns']['firstElement'] . $this->columnmapper($objElement->simple_columns) . $GLOBALS['TL_LANG']['simple_columns']['first-suffix'];
 						$simpleColumnCounter[$columns] += $columnCount;
 					}
 					elseif ($simpleColumnCounter[$columns] < $columns-$columnCount)
@@ -150,18 +150,18 @@ class SimpleColumnsHook extends Frontend
 					}
 					else
 					{
-						$scClass .= ' sc-last sc' . $objElement->simple_columns . '-last';
+						$scClass .= ' '.$GLOBALS['TL_LANG']['simple_columns']['lastElement'] . $this->columnmapper($objElement->simple_columns) . $GLOBALS['TL_LANG']['simple_columns']['last-suffix'];
 						$objElement->simple_columns_close = true;
 					}
 				}
 				elseif ($startRowspan)
 				{
-					$scClass = 'sc-rowspan '.$scClass;
+					$scClass = $GLOBALS['TL_LANG']['simple_columns']['rawspan'] .' ' .$scClass;
 				}
 
 				if ($objElement->simple_columns_close)
 				{
-					$scClass .= ' sc-close';
+					$scClass .= ' ' . $GLOBALS['TL_LANG']['simple_columns']['close'];
 					$simpleColumnCounter[$columns] = 0;
 				}
 				
@@ -223,5 +223,25 @@ class SimpleColumnsHook extends Frontend
 		
 		return $strBuffer;
 	}
+
+
+    /**
+     * @param $columns
+     * @return mixed
+     */
+    protected function columnMapper($columns){
+
+        if (isset($GLOBALS['TL_HOOKS']['scColumnMapping']) && is_array($GLOBALS['TL_HOOKS']['scColumnMapping']))
+        {
+            foreach ($GLOBALS['TL_HOOKS']['scColumnMapping'] as $callback)
+            {
+
+               $this->import($callback[0]);
+               $columns = $this->$callback[0]->$callback[1]($columns);
+            }
+        }
+
+        return $columns;
+    }
 
 }
