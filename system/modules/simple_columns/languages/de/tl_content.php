@@ -11,16 +11,17 @@ $GLOBALS['TL_LANG']['tl_content']['simple_columns_legend_ignore'] = 'Spalteneins
  */
 $GLOBALS['TL_LANG']['tl_content']['simple_columns']['title'] = array('Spalten', 'Anzahl der Spalten');
 $GLOBALS['TL_LANG']['tl_content']['simple_columns']['reference'] = array(
-	'2' => '2-spaltig',
-	'3' => '3-spaltig',
-	'3-2' => '→ über 2 Spalten',
-	'4' => '4-spaltig',
-	'4-2' => '→ über 2 Spalten',
-	'4-3' => '→ über 3 Spalten',
-	'5' => '5-spaltig',
-	'5-2' => '→ über 2 Spalten',
-	'5-3' => '→ über 3 Spalten',
-	'5-4' => '→ über 4 Spalten'
+    '12-2' => '2 von 12 Spalten',
+    '12-3' => '3 von 12 Spalten',
+    '12-4' => '4 von 12 Spalten',
+    '12-5' => '5 von 12 Spalten',
+    '12-6' => '6 von 12 Spalten',
+    '12-7' => '7 von 12 Spalten',
+    '12-8' => '8 von 12 Spalten',
+    '12-9' => '9 von 12 Spalten',
+    '12-10' => '10 von 12 Spalten',
+    '12-11' => '11 von 12 Spalten',
+    '12-12' => '12 von 12 Spalten'
 );
 
 $GLOBALS['TL_LANG']['tl_content']['simple_columns_rowspan']['title'] = array('Spaltenhöhe', 'Mehreren Elemente in einer Spalte zusammenfassen.');
@@ -53,3 +54,16 @@ $GLOBALS['TL_LANG']['simple_columns']['close'] = 'u_close';
 $GLOBALS['TL_LANG']['simple_columns']['base'] = 'u_';
 $GLOBALS['TL_LANG']['simple_columns']['count'] = 'u_count_';
 $GLOBALS['TL_LANG']['simple_columns']['border'] = 'u_border';
+
+
+
+$GLOBALS['TL_LANG']['swFeatures']['tl_content']['subline'] = array('Subheadline','Die Subheadline für dieses Element');
+$GLOBALS['TL_LANG']['swFeatures']['tl_content']['useasbgimg'] = array('Als Hintergrundbild','Dieses Bild als Hintergrundbild einsetzen');
+$GLOBALS['TL_LANG']['swFeatures']['tl_content']['headlineLink'] = array('Button Verlinkung','Auswahl der Seite für die Buttonverlinkung');
+$GLOBALS['TL_LANG']['swFeatures']['tl_content']['headlineLinkTitle'] = array('Button Titel','Die Beschriftung des Buttons');
+
+$GLOBALS['TL_LANG']['swFeatures']['tl_content']['headlineLinkTitleFallback'] = "mehr";
+
+$GLOBALS['TL_LANG']['tl_content']['buttonlinklegend'] = 'Inline Button Generator';
+
+

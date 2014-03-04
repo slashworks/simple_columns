@@ -16,11 +16,13 @@ window.addEvent('domready', function()
 			rowHeight = height;
 		}
 
+
 		if (column.hasClass('sc-close'))
 		{
 			row.each(function(rowColumn, index)
 			{
 				size = rowColumn.getComputedSize();
+
 
 				if (rowColumn.hasClass('sc-autoheight') && (size.totalHeight < rowHeight))
 				{

@@ -89,10 +89,11 @@ class SimpleColumnsHook extends Frontend
 				{
 					if (!defined('SIMPLE_COLUMNS_JS_LINK'))
 					{
-						if ($GLOBALS['TL_CONFIG']['simpleColumnsFramework'] == 'mootools' ||
+
+                        if ($GLOBALS['TL_CONFIG']['simpleColumnsFramework'] == 'mootools' ||
 							($GLOBALS['TL_CONFIG']['simpleColumnsFramework'] == 'auto' && (version_compare(VERSION, '3', '<') || $objPage->hasMooTools)))
 						{
-							$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/simple_columns/assets/scripts/moo_simple_columns.js';
+                            $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/simple_columns/assets/scripts/moo_simple_columns.js';
 						}
 						elseif ($GLOBALS['TL_CONFIG']['simpleColumnsFramework'] == 'jquery' || $objPage->hasJQuery)
 						{
@@ -105,11 +106,12 @@ class SimpleColumnsHook extends Frontend
 					$scClass .= ' sc-autoheight';
 				}
 
-				$columns = (strlen($objElement->simple_columns) == 1 ? (int)$objElement->simple_columns : (int)substr($objElement->simple_columns, 0, 1));
-				$columnCount = (strlen($objElement->simple_columns) == 1 ? 1 : (int)substr($objElement->simple_columns, 2, 1));
+				$columns = (strlen($objElement->simple_columns) == 1 ? (int)$objElement->simple_columns : (int)substr($objElement->simple_columns, 0, 2));
+				$columnCount = (strlen($objElement->simple_columns) == 1 ? 1 : (int)substr($objElement->simple_columns, 3, 2));
 
 				if (TL_MODE == 'BE')
 				{
+
 					for ($i=0; $i<$simpleColumnCounter[$columns]; $i++)
 					{
 						$be_html .= '<img src="system/modules/simple_columns/assets/images/empty.png" width="10" height="10" alt="" style="margin:2px 2px '.($simpleColumnRowspan?'12':'2').'px 2px">';

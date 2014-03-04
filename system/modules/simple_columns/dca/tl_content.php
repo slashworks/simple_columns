@@ -42,7 +42,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['simple_columns'] = array
 	'eval'			=> array
 	(
 		'includeBlankOption'	=> true,
-		'maxlength'				=> 3,
+		'maxlength'				=> 12,
 		'tl_class'				=> 'w50'
 	)
 );
